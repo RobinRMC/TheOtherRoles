@@ -1,5 +1,5 @@
 ![eisbison banner](./Images/TOR_logo.png)
-<p align="center"><a href="https://github.com/Eisbison/TheOtherRoles/releases/"><img src="https://badgen.net/github/release/eisbison/theotherroles"></a></p>
+<p align="center"><a href="https://github.com/RobinRMC/TheOtherRoles/releases/"><img src="https://badgen.net/github/release/robinrmc/theotherroles"></a></p>
 
 
 This mod is not affiliated with Among Us or Innersloth LLC, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.</p>
@@ -12,7 +12,7 @@ This mod is not affiliated with Among Us or Innersloth LLC, and the content cont
 
 # The Other Roles
 
-The **The Other Roles** is a mod for [Among Us](https://store.steampowered.com/app/945360/Among_Us) which adds many new roles, new [Settings](#settings) and new [Custom Hats](#custom-hats) to the game.
+**The Other Roles** is a mod for [Among Us](https://store.steampowered.com/app/945360/Among_Us) which adds many new roles, new [Settings](#settings) and new [Custom Hats](#custom-hats) to the game.
 Even more roles are coming soon. :)
 
 | Impostor | Crewmate | Neutral | Modifier | Gamemode |
@@ -733,7 +733,7 @@ The [Role Assignment](#role-assignment) sections explains how the roles are bein
 # Installation
 
 ## Windows Installation Steam
-1. Download the newest [release](https://github.com/Eisbison/TheOtherRoles/releases/latest)
+1. Download the newest [release](https://github.com/RobinRMC/TheOtherRoles/releases/latest)
 2. Find the folder of your game. You can right click on the game in your library, a menu will appear, click on properties, local data, browse
 3. Go back one folder to common and make a copy of your Among Us game folder and paste it somewhere on the same drive.
 4. Now unzip and drag or extract the files from the .zip into your Among Us game folder that you just copied, at the `.exe` level (just into the folder).
@@ -742,7 +742,7 @@ The [Role Assignment](#role-assignment) sections explains how the roles are bein
 Not working? You might want to install the dependency [vc_redist](https://aka.ms/vs/16/release/vc_redist.x86.exe)
 
 ## Windows Installation Epic
-1. Download the newest [release](https://github.com/Eisbison/TheOtherRoles/releases/latest)
+1. Download the newest [release](https://github.com/RobinRMC/TheOtherRoles/releases/latest)
 2. Find the folder of your game. Should be stored in "Epic/AmongUs" (wherever you installed Epic on your PC)
 3. Now unzip and drag or extract the files from the .zip into the original Epic Among Us game folder.
 4. Run the game by starting the game in your Epic Games launcher (the first launch might take a while).
@@ -753,7 +753,7 @@ Not working? You might want to install the dependency [vc_redist](https://aka.ms
 
 ## Linux Installation
 1. Install Among Us via Steam
-2. Download newest [release](https://github.com/Eisbison/TheOtherRoles/releases/latest) and extract it to ~/.steam/steam/steamapps/common/Among Us
+2. Download newest [release](https://github.com/RobinRMC/TheOtherRoles/releases/latest) and extract it to ~/.steam/steam/steamapps/common/Among Us
 3. Enable winhttp.dll via the proton winecfg (https://docs.bepinex.dev/articles/advanced/proton_wine.html)
 4. Launch the game via Steam
 

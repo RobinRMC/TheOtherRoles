@@ -113,14 +113,12 @@ namespace TheOtherRoles.Patches {
                         kickingTimer += Time.deltaTime;
                         if (kickingTimer > 10) {
                             kickingTimer = 0;
-			                AmongUsClient.Instance.ExitGame(DisconnectReasons.ExitGame);
-                            SceneChanger.ChangeScene("MainMenu");
                         }
 
-                        __instance.GameStartText.text = $"<color=#FF0000FF>The host has no or a different version of The Other Roles\nYou will be kicked in {Math.Round(10 - kickingTimer)}s</color>";
+                        __instance.GameStartText.text = $"<color=#FF0000FF>The host has no or a different version of The Other Roles</color>";
                         __instance.GameStartText.transform.localPosition = __instance.StartButton.transform.localPosition + Vector3.up * 2;
                     } else if (versionMismatch) {
-                        __instance.GameStartText.text = $"<color=#FF0000FF>Players With Different Versions:\n</color>" + message;
+                        __instance.GameStartText.text = $"<color=#FF0000FF>Players with different versions:\n</color>" + message;
                         __instance.GameStartText.transform.localPosition = __instance.StartButton.transform.localPosition + Vector3.up * 2;
                     } else {
                         __instance.GameStartText.transform.localPosition = __instance.StartButton.transform.localPosition;
@@ -165,7 +163,7 @@ namespace TheOtherRoles.Patches {
         [HarmonyPatch(typeof(GameStartManager), nameof(GameStartManager.BeginGame))]
         public class GameStartManagerBeginGame {
             public static bool Prefix(GameStartManager __instance) {
-                // Block game start if not everyone has the same mod version
+                // Block game start if not everyone has the same mod version - deactivated by RobinRMC
                 bool continueStart = true;
 
                 if (AmongUsClient.Instance.AmHost) {
@@ -176,15 +174,13 @@ namespace TheOtherRoles.Patches {
                             continue;
                         
                         if (!playerVersions.ContainsKey(client.Id)) {
-                            continueStart = false;
-                            break;
+                            continue;
                         }
                         
                         PlayerVersion PV = playerVersions[client.Id];
                         int diff = TheOtherRolesPlugin.Version.CompareTo(PV.version);
                         if (diff != 0 || !PV.GuidMatches()) {
-                            continueStart = false;
-                            break;
+                            continue;
                         }
                     }
                     if ((continueStart && TORMapOptions.gameMode == CustomGamemodes.HideNSeek || TORMapOptions.gameMode == CustomGamemodes.PropHunt) && GameOptionsManager.Instance.CurrentGameOptions.MapId != 6) {

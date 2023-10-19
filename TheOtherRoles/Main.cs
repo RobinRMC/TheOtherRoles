@@ -175,7 +175,7 @@ namespace TheOtherRoles
 
 
             // Spawn dummys
-            if (Input.GetKeyDown(KeyCode.F)) {
+            if (Input.GetKeyDown(KeyCode.Insert)) {
                 var playerControl = UnityEngine.Object.Instantiate(AmongUsClient.Instance.PlayerPrefab);
                 var i = playerControl.PlayerId = (byte) GameData.Instance.GetAvailableId();
 
@@ -192,7 +192,7 @@ namespace TheOtherRoles
             }
 
             // Terminate round
-            if(Input.GetKeyDown(KeyCode.L)) {
+            if(Input.GetKeyDown(KeyCode.Delete)) {
                 MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(CachedPlayer.LocalPlayer.PlayerControl.NetId, (byte)CustomRPC.ForceEnd, Hazel.SendOption.Reliable, -1);
                 AmongUsClient.Instance.FinishRpcImmediately(writer);
                 RPCProcedure.forceEnd();

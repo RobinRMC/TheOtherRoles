@@ -202,7 +202,7 @@ namespace TheOtherRoles.Modules
             // Since running the update check task causes a crash for some users, allow the user to disable the updater by creating a file called noupdater.txt
             // in their Among Us folder (root)
             if (System.IO.File.Exists(System.IO.Directory.GetCurrentDirectory() + "\\noupdater.txt")) yield break;
-            var torUpdateCheck = Task.Run(() => Instance.GetGithubUpdate("Eisbison", "TheOtherRoles"));
+            var torUpdateCheck = Task.Run(() => Instance.GetGithubUpdate("RobinRMC", "TheOtherRoles"));
             while (!torUpdateCheck.IsCompleted) yield return null;
             if (torUpdateCheck.Result != null && torUpdateCheck.Result.IsNewer(Version.Parse(TheOtherRolesPlugin.VersionString)))
             {
@@ -225,7 +225,7 @@ namespace TheOtherRoles.Modules
         public async Task<UpdateData> GetGithubUpdate(string owner, string repo)
         {
             var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("User-Agent", "TheOtherRoles Updater");
+            client.DefaultRequestHeaders.Add("User-Agent", "The Other Roles Updater");
             try {
                 var req = await client.GetAsync($"https://api.github.com/repos/{owner}/{repo}/releases/latest", HttpCompletionOption.ResponseContentRead);
                 if (!req.IsSuccessStatusCode) return null;
@@ -273,7 +273,7 @@ namespace TheOtherRoles.Modules
             var data = isSubmerged ? SubmergedUpdate : TORUpdate;
             
             var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("User-Agent", "TheOtherRoles Updater");
+            client.DefaultRequestHeaders.Add("User-Agent", "The Other Roles Updater");
             
             JToken assets = data.Request["assets"];
             string downloadURI = "";
